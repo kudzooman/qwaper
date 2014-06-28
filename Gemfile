@@ -43,6 +43,9 @@ gem 'devise'
 # The Figaro gem provides an elegant solution for handling sensitive data with environment variables.
 gem 'figaro'
 
+# Faker seeds database with Lorems
+gem 'faker'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
