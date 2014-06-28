@@ -17,6 +17,32 @@ h2 {
   font-family: 'Montserrat', sans-serif;
 }
 
+h3 {
+  font-size: 4em;
+  font-family: 'Cabin Sketch', cursive;
+  margin: 0;
+}
+
 .about {
   width: 83em;
+  margin: 0.45em;
+}
+
+.basic.ui.button {
+  font-family: 'Cabin Sketch', cursive;
+  font-size: 4em;
+  margin: 0.25em;
+  border-radius: 2px;
+  color: black;
+  background: red;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+header {
+  border-style: none none solid none;
+  border-size: 0.05em;
 }

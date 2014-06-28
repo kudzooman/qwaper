@@ -37,6 +37,12 @@ gem 'spring',        group: :development
 # front end css frame work
 gem 'semantic-ui-sass', '~> 0.16.1.0'
 
+# user authentication
+gem 'devise'
+
+# The Figaro gem provides an elegant solution for handling sensitive data with environment variables.
+gem 'figaro'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

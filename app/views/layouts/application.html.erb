@@ -7,6 +7,18 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <header>
+      <%= link_to "qwaper", home_path, class: "basic ui button" %> 
+    <% if current_user %>
+      <%= link_to "log out", destroy_user_session_path, method: :delete, class: "basic ui button" %> 
+    <% else %>
+      <%= link_to "sign in", new_user_session_path, class: "basic ui button" %> 
+      <%= link_to "sign up", new_user_registration_path, class: "basic ui button" %> 
+    <% end %>
+  </header>
+    
+
+
 
 <%= yield %>
 
