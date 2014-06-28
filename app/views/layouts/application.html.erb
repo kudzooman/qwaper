@@ -15,9 +15,27 @@
       <%= link_to "sign in", new_user_session_path, class: "basic ui button" %> 
       <%= link_to "sign up", new_user_registration_path, class: "basic ui button" %> 
     <% end %>
+    <%= link_to about_path, class: "basic ui icon button" do %>
+      <i class="basic question icon pull right"></i>
+    <% end %>
   </header>
     
-
+  <% if flash[:notice] %>
+        <div class="alert alert-success">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          <%= flash[:notice] %>
+        </div>
+      <% elsif flash[:error] %>
+        <div class="alert alert-danger">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          <%= flash[:error] %>
+        </div>
+      <% elsif flash[:alert] %>
+        <div class="alert">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          <%= flash[:alert] %>
+        </div>
+      <% end %>
 
 
 <%= yield %>

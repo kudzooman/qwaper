@@ -1,9 +1,14 @@
 <div class="splash">
-  <h1>qwaper</h1>
+  <h1><%= link_to "qwaper", new_post_path %></h1>
 </div>
 
 <div class="about">
-  <h2>Have an idea you don't want anyone to steal? What about a crappy idea you don't care about? That's where qwaper comes in, you can leave your qwap here! 
-   <br><br> Go ahead, give a qwap.</h2>
+  <h2>Have an idea you don't want anyone to steal? What about a crappy idea you don't care about? That's where qwaper comes in, you can leave your qwap here!</h2>
 </div>
+
+<div>
+  <%= link_to "Go ahead, give a qwap!", new_post_path, class: "basic ui button" %>
+</div>
+
+
 

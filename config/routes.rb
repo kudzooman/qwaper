@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+
+resources :posts
+
+resources :tags
+
   devise_for :users
 
   get 'home' => 'welcome#index'
