@@ -1,5 +1,5 @@
 <h3>Sign up</h3>
-
+<div class="signin">
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
@@ -11,8 +11,9 @@
 
   <div><%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
+<div>
 
-  <div><%= f.submit "Sign up" %></div>
+  <div class="signin btn"><%= f.submit "Sign up", class: 'basic ui button' %></div>
 <% end %>
 
 <%= render "devise/shared/links" %>

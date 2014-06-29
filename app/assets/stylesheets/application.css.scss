@@ -20,7 +20,13 @@ h2 {
 h3 {
   font-size: 4em;
   font-family: 'Cabin Sketch', cursive;
-  margin: 0;
+  margin: 0px 0px 10px 5px;
+}
+
+h4 {
+  font-size: 2.5em;
+  font-family: 'Cabin Sketch', cursive;
+  margin: 0px 0px 0px 20px;
 }
 
 .about {
@@ -28,12 +34,27 @@ h3 {
   margin: 0.45em;
 }
 
+.signin {
+  font-family: 'Cabin Sketch', cursive;
+  font-size: 2.75em;
+  margin: 0px 0px 10px 5px;
+}
+
+.signin.btn {
+  font-size: 1em;
+  margin: 0px 0px 10px 5px;
+}
+
 .basic.ui.button {
   font-family: 'Cabin Sketch', cursive;
-  font-size: 4em;
-  margin: 0;
+  font-size: 3em;
+  margin: 0px 0px 0px 0px;
   border-radius: 2px;
-  color: black;
+  color: black !important;
+}
+
+.basic.ui.button:hover {
+  color: red !important;
 }
 
 a {
@@ -41,18 +62,83 @@ a {
   color: black;
 }
 
+a:hover {
+  color: red;
+}
+
 p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2em;
+}
+
+li {
   font-family: 'Cabin Sketch', cursive;
   font-size: 2em;
+}
+
+input {
+  border-radius: 5px;
+  font-family: 'Cabin Sketch', cursive;
+  font-size: 0.80em;
+  margin: 0px 0px 10px 5px;
 }
 
 header {
   border-style: none none solid none;
   border-size: 0.05em;
+  margin: 0px 0px 0px 0px;
+}
+
+footer {
+  font-size: 1.5em;
+  font-family: 'Montserrat', sans-serif;
 }
 
 textarea {
 height: 100px;
 width: 700px;
 font-size: 2em;
+}
+
+.splash {
+  margin: -50px 0px 0px 0px
+}
+
+.about.heading {
+  font-size: 4em;
+  font-family: 'Cabin Sketch', cursive;
+  margin: 0px 0px 10px 5px ;
+}
+
+.about.one {
+  width: 73em;
+  margin: -10px 0px 0px 20px;
+}
+
+.about.two {
+  width: 58em;
+  margin: 0px 0px 0px 140px;
+}
+
+.about.three {
+  width: 43em;
+  margin: 0px 0px 0px 90px;
+}
+
+.about.four {
+  width: 55em;
+  margin: 0px 0px 0px 190px;
+}
+
+span {
+  display: inline;
+  font-size: 0.5em;
+}
+
+small {
+  font-size: 1.5em;
+}
+
+.qwap.list {
+  width: 60%;
 }

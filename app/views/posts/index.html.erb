@@ -1,7 +1,10 @@
 <h3>List of all the qwap:</h3>
 
 <% @posts.each do |post| %>
-<div>
+<div class="qwap list">
   <p><%= post.body %></p>
 </div>
+<small>
+  qwaped <%= time_ago_in_words(post.created_at) %> ago by <%= post.user %>
+</small>
 <% end %>
