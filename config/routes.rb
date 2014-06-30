@@ -4,6 +4,9 @@ resources :posts
 
 resources :tags
 
+get '/up-vote' => 'votes#up_vote', as: :up_vote
+get '/down-vote' => 'votes#down_vote', as: :down_vote
+
   devise_for :users
 
   get 'home' => 'welcome#index'

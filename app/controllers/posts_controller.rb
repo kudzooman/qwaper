@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.all
+    @posts = Post.paginate(page: params[:page], per_page: 20)
   end
 
   def new
@@ -17,6 +17,20 @@ class PostsController < ApplicationController
     else
       flash[:error] = "There was an error saving the post. Please try again."
       render :new
+    end
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    body = @post.body
+
+    authorize @post
+    if @post.destroy
+      flash[:notice] = "qwap all gone."
+      redirect_to posts_path
+    else
+      flash[:error] = "There was an error."
+      render :index
     end
   end
 
