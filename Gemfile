@@ -46,6 +46,11 @@ gem 'figaro'
 # Faker seeds database with Lorems
 gem 'faker'
 
+# Pundit is a gem that allows you to authorize different users for different tasks in your app.
+gem 'pundit'
+
+gem 'newrelic_rpm'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

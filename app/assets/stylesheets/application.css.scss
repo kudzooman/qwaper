@@ -2,6 +2,12 @@
 @import url(http://fonts.googleapis.com/css?family=Nunito:400,700|Oswald:400,700);
 @import url(http://fonts.googleapis.com/css?family=Cabin+Sketch|Montserrat);
 
+img {
+  height: 3.5%;
+  width: 6.5%;
+  margin: 0px 0px -29px -41px;
+}
+
 body {
   font-size: 62.5%;
 }
@@ -20,7 +26,7 @@ h2 {
 h3 {
   font-size: 4em;
   font-family: 'Cabin Sketch', cursive;
-  margin: 0px 0px 10px 5px;
+  margin: 10px 0px 10px 5px;
 }
 
 h4 {
@@ -63,7 +69,7 @@ a {
 }
 
 a:hover {
-  color: red;
+  color: #9A0006;
 }
 
 p {

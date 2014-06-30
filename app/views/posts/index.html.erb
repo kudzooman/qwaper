@@ -1,5 +1,9 @@
 <h3>List of all the qwap:</h3>
 
+<% if policy(Post.new).create? %>
+<%= link_to "Add more qwap!", new_post_path, class: "basic ui button" %>
+<% end %>
+
 <% @posts.each do |post| %>
 <div class="qwap list">
   <p><%= post.body %></p>
