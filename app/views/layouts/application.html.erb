@@ -13,6 +13,7 @@
     <% end %>
 
     <%= link_to "qwap", posts_path, class: "basic ui button" %> 
+    <%= link_to "qwapers", users_path, class: "basic ui button" %> 
 
     <% if current_user %>
       <%= link_to "log out", destroy_user_session_path, method: :delete, class: "basic ui button" %> 

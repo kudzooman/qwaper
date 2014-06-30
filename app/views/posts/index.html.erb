@@ -12,25 +12,32 @@
 <div class="qwap list">
   <p><%= post.body %></p>
 </div>
+
 <% if false %>
+
 <div>
   <div>
-    <%= link_to " ", post_up_vote_path, class: 'ui icon button' do %>
+    <%= link_to " ", post_up_vote_path, method: :post do %>
     <i class="hand up icon"></i>
+    <% end %>
   </div>
-  <% end %>
+  
   <div>
     <strong><%= post.points %></strong>
   </div>
+
   <div>
-    <%= link_to " ", post_down_vote_path, class: 'ui icon button' do %>
+    <%= link_to " ", post_down_vote_path, method: :post do %>
     <i class="hand down icon"></i>
+    <% end %>
   </div>
-  <% end %>
+  
 </div>
+
 <% end %>
+
 <small>
-  qwaped <%= time_ago_in_words(post.created_at) %> ago by <%= post.user.name if post.user %>
+  qwaped <%= time_ago_in_words(post.created_at) %> ago by <%= link_to post.user.name, post.user if post.user %> (click name to see all their qwap)
 </small>
 <% end %>
 
