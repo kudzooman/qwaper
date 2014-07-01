@@ -1,10 +1,13 @@
-<h3><%= @user.name %></h3>
-<p>
-  <%= pluralize(@user.posts.count, 'post') %>
-</p>
+<h3><%= @user.name || @user.email %><span> (<%= pluralize(@user.posts.count, 'post') %>)</span></h3>
 
 <% @user.posts.each do |post| %>
-<div>
-  <h3><%= post.body %></h3>
+<div class="qwap list">
+  <p><%= post.body %></p>
 </div>
+  <small>
+  <em>qwapped <%= time_ago_in_words(post.created_at) %> ago by <%= link_to post.user.name, post.user if post.user %></em>
+</small>
 <% end %>
+
+
+<h3><%= link_to "Back", :back %></h3>

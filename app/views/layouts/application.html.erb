@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>qwaper</title>
+  <title>qwapper</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -13,9 +13,13 @@
     <% end %>
 
     <%= link_to "qwap", posts_path, class: "basic ui button" %> 
-    <%= link_to "qwapers", users_path, class: "basic ui button" %> 
+    <%= link_to "qwappers", users_path, class: "basic ui button" %> 
 
     <% if current_user %>
+      <%= link_to (current_user.name || current_user.email), current_user, class: 'basic ui button' %>
+      <%= link_to edit_user_registration_path, class: 'basic ui icon button pull right' do %>
+        <i class="basic empty star icon"></i>
+        <% end %>
       <%= link_to "log out", destroy_user_session_path, method: :delete, class: "basic ui button" %> 
     <% else %>
       <%= link_to "sign in", new_user_session_path, class: "basic ui button" %> 
@@ -47,7 +51,7 @@
 
 <%= yield %>
 
-<footer>© qwaper LLC 2014</footer>
+<footer>© qwapper LLC 2014</footer>
 
 
 

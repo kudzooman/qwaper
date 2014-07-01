@@ -3,9 +3,9 @@
 @import url(http://fonts.googleapis.com/css?family=Cabin+Sketch|Montserrat);
 
 img {
-  height: 3.5%;
-  width: 6.5%;
-  margin: 0px 0px -29px -41px;
+  height: 2.75%;
+  width: 5.5%;
+  margin: 0px 0px -20px -37px;
 }
 
 .page {
@@ -20,7 +20,7 @@ body {
 h1 {
   font-size: 23em;
   font-family: 'Cabin Sketch', cursive;
-  margin: 0;
+  margin: 40px 0px 0px 0px;
 }
 
 h2 {
@@ -52,13 +52,13 @@ h4 {
 }
 
 .signin.btn {
-  font-size: 1em;
+  font-size: 0.45em;
   margin: 0px 0px 10px 5px;
 }
 
 .basic.ui.button {
   font-family: 'Cabin Sketch', cursive;
-  font-size: 3em;
+  font-size: 2.25em;
   margin: 0px 0px 0px 0px;
   border-radius: 2px;
   color: black !important;
@@ -74,7 +74,7 @@ a {
 }
 
 a:hover {
-  color: #9A0006;
+  color: #D00008;
 }
 
 p {
@@ -129,6 +129,9 @@ font-size: 2em;
 .about.two {
   width: 58em;
   margin: 0px 0px 0px 140px;
+  padding: 1px 4px 1px 19px;
+  border-style: dashed;
+  border-radius: 5px;
 }
 
 .about.three {
@@ -139,6 +142,21 @@ font-size: 2em;
 .about.four {
   width: 55em;
   margin: 0px 0px 0px 190px;
+  padding: 1px 4px 1px 19px;
+  border-style: dotted;
+  border-radius: 5px;
+}
+
+.about.five {
+  width: 53em;
+  margin: -10px 0px 0px 20px;
+}
+
+.about.six {
+  width: 68em;
+  margin: 0px 0px 0px 20px;
+  border-style: solid;
+  border-width: 1.5em;
 }
 
 span {
@@ -148,13 +166,23 @@ span {
 
 small {
   font-size: 1.5em;
+  a {
+  text-decoration: underline;
+  color: red;
+  }
 }
 
 .qwap.list {
   width: 60%;
+  border-style: solid;
+  border-width: 0.1em;
+  padding: 1px 4px 1px 19px;
+  margin: 25px 0px 0px 0px;
+  border-radius: 2px;
 }
 
 .user.list {
   font-size: 3em;
   font-family: 'Cabin Sketch', cursive;
+  margin: 15px 0px 10px 30px;
 }

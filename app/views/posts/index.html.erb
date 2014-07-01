@@ -37,7 +37,7 @@
 <% end %>
 
 <small>
-  qwaped <%= time_ago_in_words(post.created_at) %> ago by <%= link_to post.user.name, post.user if post.user %> (click name to see all their qwap)
+  <em>qwapped <%= time_ago_in_words(post.created_at) %> ago by <%= link_to post.user.name, post.user if post.user %></em>
 </small>
 <% end %>
 
