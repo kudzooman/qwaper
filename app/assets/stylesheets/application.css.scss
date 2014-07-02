@@ -36,9 +36,11 @@ h3 {
 }
 
 h4 {
-  font-size: 2.5em;
+  font-size: 1.75em;
   font-family: 'Cabin Sketch', cursive;
-  margin: 0px 0px 0px 20px;
+  padding: 0.1em 0.1em 0.25em 0.3em;
+  margin: -0.5em 0em 0em -0.25em;
+  width: 73em;
 }
 
 h5 {
@@ -68,6 +70,7 @@ h5 {
   margin: 0px 0px 0px 0px;
   border-radius: 2px;
   color: black !important;
+  border-color: red !important;
 }
 
 .basic.ui.button:hover {
@@ -132,7 +135,6 @@ font-size: 2em;
 .about.heading {
   font-size: 4em;
   font-family: 'Cabin Sketch', cursive;
-  margin: 0px 0px 10px 5px ;
 }
 
 .about.one {
@@ -176,6 +178,7 @@ font-size: 2em;
 span {
   display: inline;
   font-size: 0.75em;
+  width: 73em;
 }
 
 small {

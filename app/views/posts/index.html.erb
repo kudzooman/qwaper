@@ -22,7 +22,7 @@
     <div class="thirteen wide column">
       <div class="segment">
         <div class="qwap list">
-          <h5><%= post.body %> ( <span><em><%= link_to post.user.name, post.user if post.user %>, <%= time_ago_in_words(post.created_at) %> ago</em></span> )</h5>
+          <h5><%= post.body %> <br>( <span><em><%= link_to post.user.name, post.user if post.user %>, <%= time_ago_in_words(post.created_at) %> ago</em></span> )</h5>
         </div>
       </div>
     </div>
