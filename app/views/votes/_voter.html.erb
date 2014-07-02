@@ -1,11 +1,30 @@
-<div>
+<% if policy( Vote.new ).create? %>
   <div>
-    <%= link_to " ", '#', class: 'hand up icon' %>
+    <div class="up">
+      <%= link_to post_up_vote_path(post) do %>
+      <i class="triangle up icon"></i>
+      <% end %>
+    </div>
+    
+    <div class="points">
+      <small><%= pluralize(post.points, '') %></small>
+
+
+    <% if false %>
+    <strong>
+      (<%= pluralize(post.up_votes, 'up vote') %>,
+      <%= pluralize(post.down_votes, 'down vote') %>)
+    </strong>
+    <% end %>
+
+
+    </div>
+
+    <div class="down">
+      <%= link_to post_down_vote_path(post) do %>
+      <i class="triangle down icon"></i>
+      <% end %>
+    </div>
   </div>
-  <div>
-    <strong><%= post.points %></strong>
-  </div>
-  <div>
-    <%= link_to " ", '#', class: 'hand down icon' %>
-  </div>
-</div>
+<% end %>
+

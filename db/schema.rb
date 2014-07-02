@@ -11,13 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140630132512) do
+ActiveRecord::Schema.define(version: 20140701205354) do
 
   create_table "posts", force: true do |t|
     t.text     "body"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
+    t.float    "rank"
   end
 
   add_index "posts", ["user_id"], name: "index_posts_on_user_id"

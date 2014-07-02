@@ -11,12 +11,26 @@ end
 users = User.all
 
 50.times do
-  Post.create(
+  post = Post.create(
+    user: users.sample,
     body: Faker::Lorem.paragraph
 )
-posts = Post.all
+# set the created_at to a time within the past year
+  post.update_attribute(:created_at, rand(10.minutes .. 1.year).ago)
+  post.update_rank
 
 end
+
+posts = Post.all
+
+admin = User.new(
+  name:          'Admin User',
+  email:         'admin@example.com',
+  password:      'helloworld',
+  role:          'admin'
+  )
+  admin.skip_confirmation!
+  admin.save
 
 puts "Seed finished"
 puts "#{Post.count} posts created"

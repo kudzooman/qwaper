@@ -8,38 +8,29 @@
 <%= link_to "Add more qwap!", new_post_path, class: "basic ui button" %>
 <% end %>
 
+
 <% @posts.each do |post| %>
-<div class="qwap list">
-  <p><%= post.body %></p>
+<div class="ui grid">
+ <div class="row">
+    <div class="four column">
+      <div class="segment">
+        <div class="votes">
+          <%= render partial: 'votes/voter', locals: { post: post } %>
+        </div>
+      </div>
+    </div>
+    <div class="thirteen wide column">
+      <div class="segment">
+        <div class="qwap list">
+          <h5><%= post.body %> ( <span><em><%= link_to post.user.name, post.user if post.user %>, <%= time_ago_in_words(post.created_at) %> ago</em></span> )</h5>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-
-<% if false %>
-
-<div>
-  <div>
-    <%= link_to " ", post_up_vote_path, method: :post do %>
-    <i class="hand up icon"></i>
-    <% end %>
-  </div>
-  
-  <div>
-    <strong><%= post.points %></strong>
-  </div>
-
-  <div>
-    <%= link_to " ", post_down_vote_path, method: :post do %>
-    <i class="hand down icon"></i>
-    <% end %>
-  </div>
-  
-</div>
-
 <% end %>
 
-<small>
-  <em>qwapped <%= time_ago_in_words(post.created_at) %> ago by <%= link_to post.user.name, post.user if post.user %></em>
-</small>
-<% end %>
+
 
 <div class="page">
 <%= will_paginate @posts %>

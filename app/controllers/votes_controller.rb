@@ -15,7 +15,7 @@ class VotesController < ApplicationController
 
   def setup
     
-    @post = @post.find(params[:post_id])
+    @post = Post.find(params[:post_id])
 
     @vote = @post.votes.where(user_id: current_user.id).first
   end

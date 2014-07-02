@@ -7,6 +7,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+
   <header>
     <%= link_to home_path do %> 
     <img><%= image_tag 'quacker.png' %></img>
@@ -29,6 +30,7 @@
       <i class="basic question icon pull right"></i>
     <% end %>
   </header>
+
     
   <% if flash[:notice] %>
         <div class="alert alert-success">
@@ -48,10 +50,32 @@
       <% end %>
 
 
-
 <%= yield %>
 
-<footer>© qwapper LLC 2014</footer>
+
+ <footer1>
+ <div class="ui horizontal list">
+  <div class="item">
+    <footer><%= link_to "about /", about_path %></footer>
+  </div>
+  <div class="item">
+    <footer><%= link_to "qwappers /", users_path %></footer>
+  </div>
+  <div class="item">
+   <footer><%= link_to "qwap /", posts_path %></footer>
+  </div>
+  <div class="item">
+    <footer><%= link_to "sign up /", new_user_registration_path %></footer> 
+  </div>
+  <div class="item">
+    <footer><%= link_to "© qwapper LLC 2014", home_path %></footer>
+  </div>
+</div>
+</footer1>
+
+
+
+
 
 
 
