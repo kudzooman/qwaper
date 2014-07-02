@@ -1,5 +1,8 @@
 <h3>qwappers:<span> check out other qwappers qwap</span></h3>
 
+<div class="page">
+<%= will_paginate @posts %>
+</div>
 
 <% @users.each do |user| %>
 
@@ -8,5 +11,9 @@
 </div>
 
 <% end %>
+
+<div class="page">
+<%= will_paginate @posts %>
+</div>
 
 <h3><%= link_to "Back", :back %></h3>

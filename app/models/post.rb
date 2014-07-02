@@ -25,7 +25,7 @@ class Post < ActiveRecord::Base
   validates :body, length: { maximum: 200 }, presence: true
   validates :user, presence: true
 
-  default_scope { order('created_at DESC') }
+  default_scope { order('rank DESC') }
 
   private 
 
