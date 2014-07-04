@@ -1,0 +1,11 @@
+<h3>Fix qwap:</h3>
+
+<%= form_for @post do |f| %>
+  <div>
+    <%= f.text_area :body, placeholder: "Enter your qwap here. Make sure you really wanna share this with the world because you won't be able to delete it or edit it. 200 characters or less FYI" %>
+  </div>
+
+  <div>
+    <%= f.submit "Click to share your qwap", class: "basic ui button" %>
+  </div>
+<% end %>

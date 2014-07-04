@@ -16,8 +16,8 @@ class Post < ActiveRecord::Base
   end
 
   def update_rank
-    age = (self.created_at - Time.new(1970,1,1)) / 86400
-    new_rank = points + age
+    #age = (self.created_at - Time.new(1970,1,1)) / 86400
+    new_rank = points #+ age
 
     self.update_attribute(:rank, new_rank)
   end
@@ -32,4 +32,44 @@ class Post < ActiveRecord::Base
   def create_vote
     user.votes.create(value: 1, post: self)
   end
+
+# When someone votes in the top 25 index view the qwap only earns 1/4 pt
+#def create_top_vote
+  #user.votes.create(value: 0.25, post: self)
+#end
+
+# When someone votes in the random qwap mode, the qwap earns 2pts
+#def create_random_vote
+  #user.votes.create(value: 2, post: self)
+#end
+
+# When someone votes in the member qwap view, the qwap earns 1/2 pt
+#def create_member_vote
+  #user.votes.create(value: 0.5, post: self)
+#end
+
+# Users get points for voting
+
+# When someone votes in the top 25 index view the user earns 1/4 pt
+#def create_top_vote
+  #user.votes.create(value: 0.25, user: self)
+#end
+
+# When someone votes in the random qwap mode, the user earns 2pts
+#def create_random_vote
+  #user.votes.create(value: 2, user: self)
+#end
+
+# When someone votes in the member qwap view, the user earns 1/2 pt
+#def create_member_vote
+  #user.votes.create(value: 0.5, user: self)
+#end
+
+
+
+
+
+
+
+
 end

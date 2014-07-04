@@ -2,10 +2,84 @@
 @import url(http://fonts.googleapis.com/css?family=Nunito:400,700|Oswald:400,700);
 @import url(http://fonts.googleapis.com/css?family=Cabin+Sketch|Montserrat);
 
+/*Home Page*/
+.splash {
+  margin: -50px 0px 0px 0px
+}
+
+h1 {
+  font-size: 20em;
+  font-family: 'Cabin Sketch', cursive;
+  margin: 40px 0px 0px 0px;
+}
+
+.about {
+  width: 65%;
+  margin: 0.45em;
+}
+
+h2 {
+  font-size: 2em;
+  font-family: 'Montserrat', sans-serif;
+}
+
+p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2em;
+}
+.about.heading {
+  font-size: 2.5em;
+  font-family: 'Cabin Sketch', cursive;
+  margin: 30px 0px 0px 20px;
+    span {
+    font-size: 0.75em;
+  }
+}
+
+.about.one {
+  width: 73%;
+  margin: -10px 0px 0px 20px;
+}
+
+.about.two {
+  width: 58%;
+  margin: 0px 0px 0px 140px;
+  padding: 1px 4px 1px 19px;
+  border-style: dashed;
+  border-radius: 5px;
+}
+
+.about.three {
+  width: 43%;
+  margin: 0px 0px 0px 90px;
+}
+
+.about.four {
+  width: 55%;
+  margin: 0px 0px 0px 190px;
+  padding: 1px 4px 1px 19px;
+  border-style: dotted;
+  border-radius: 5px;
+}
+
+.about.five {
+  width: 53%;
+  margin: -10px 0px 0px 20px;
+}
+
+.about.six {
+  width: 68%;
+  margin: 0px 0px 0px 20px;
+  padding: 0px 0px 0px 10px;
+  border-style: solid;
+  border-width: 0.5em;
+}
+
+
 img {
   height: 2.75%;
   width: 5.5%;
-  margin: 0px 0px -20px -30px;
+  margin: 0px 0px -20px -20px;
 }
 
 .page {
@@ -16,17 +90,7 @@ img {
 
 body {
   font-size: 62.5%;
-}
-
-h1 {
-  font-size: 20em;
-  font-family: 'Cabin Sketch', cursive;
-  margin: 40px 0px 0px 0px;
-}
-
-h2 {
-  font-size: 2em;
-  font-family: 'Montserrat', sans-serif;
+  max-width: 960px;
 }
 
 h3 {
@@ -48,10 +112,7 @@ h5 {
   font-family: 'Cabin Sketch', cursive;
 }
 
-.about {
-  width: 83em;
-  margin: 0.45em;
-}
+
 
 .signin {
   font-family: 'Cabin Sketch', cursive;
@@ -70,7 +131,6 @@ h5 {
   margin: 0px 0px 8px 0px;
   border-radius: 2px;
   color: black !important;
-  border-color: red !important;
 }
 
 .basic.ui.button:hover {
@@ -86,10 +146,7 @@ a:hover {
   color: #D00008;
 }
 
-p {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 2em;
-}
+
 
 li {
   font-family: 'Cabin Sketch', cursive;
@@ -107,6 +164,7 @@ header {
   border-style: none none solid none;
   border-size: 0.05em;
   margin: 0px 0px 0px 0px;
+  width: 100%;
 }
 
 footer {
@@ -128,57 +186,14 @@ width: 700px;
 font-size: 2em;
 }
 
-.splash {
-  margin: -50px 0px 0px 0px
-}
 
-.about.heading {
-  font-size: 4em;
-  font-family: 'Cabin Sketch', cursive;
-}
 
-.about.one {
-  width: 73em;
-  margin: -10px 0px 0px 20px;
-}
 
-.about.two {
-  width: 58em;
-  margin: 0px 0px 0px 140px;
-  padding: 1px 4px 1px 19px;
-  border-style: dashed;
-  border-radius: 5px;
-}
-
-.about.three {
-  width: 43em;
-  margin: 0px 0px 0px 90px;
-}
-
-.about.four {
-  width: 55em;
-  margin: 0px 0px 0px 190px;
-  padding: 1px 4px 1px 19px;
-  border-style: dotted;
-  border-radius: 5px;
-}
-
-.about.five {
-  width: 53em;
-  margin: -10px 0px 0px 20px;
-}
-
-.about.six {
-  width: 68em;
-  margin: 0px 0px 0px 20px;
-  border-style: solid;
-  border-width: 1.5em;
-}
 
 span {
   display: inline;
   font-size: 0.75em;
-  width: 73em;
+  width: 73%;
 }
 
 small {
@@ -193,22 +208,6 @@ small {
   padding: 1px 4px 1px 19px;
   margin: -15px 0px 0px 0px;
   border-radius: 2px;
-}
-
-.votes {
-
-}
-
-.ui.grid {
-
-}
-
-.column {
- 
-}
-
-.row {
-  
 }
 
 .user.list {
@@ -260,6 +259,18 @@ button {
   font-size: 1.75em;
   font-family: 'Cabin Sketch', cursive;
   margin: 0px 0px 0px 27px
+}
+
+.ui.grid {
+  border-style: dotted;
+  border-size: 0.5em;
+  width: 95%;
+  margin: 3px 0px 0px 0px;
+
+  .basic.ui.button {
+    font-size: 1em;
+    margin: -35px 0px 10px 0px
+  }
 }
 
 

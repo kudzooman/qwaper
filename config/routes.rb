@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
 
-# resources :posts
+# resources :posts, only: [:index, :new, :update, :destroy]
 
 resources :posts do
   get '/up-vote' => 'votes#up_vote', as: :up_vote
   get '/down-vote' => 'votes#down_vote', as: :down_vote
 end
+
 
 resources :tags
 

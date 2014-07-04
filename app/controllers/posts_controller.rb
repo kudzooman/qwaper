@@ -20,6 +20,22 @@ class PostsController < ApplicationController
     end
   end
 
+  def edit
+    @post = Post.find(params[:id])
+    authorize @post
+  end
+
+  def update
+    @post = Post.find(params[:id])
+    authorize @post
+    if @post.update_attributes(post_params)
+      redirect_to posts_path
+    else
+      flash[:error] = "Try again"
+      render :edit
+    end
+  end
+
   def destroy
     @post = Post.find(params[:id])
     body = @post.body
@@ -30,7 +46,8 @@ class PostsController < ApplicationController
       redirect_to posts_path
     else
       flash[:error] = "There was an error."
-      render :index
+      redirect_to posts_path
+      #render :index
     end
   end
 

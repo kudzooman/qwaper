@@ -4,10 +4,17 @@
 
 <div class="ui grid">
  <div class="row">
-    <div class="thirteen wide column">
+  <div class="column">
+      <div class="segment">
+        <div class="votes">
+          <%= render partial: 'votes/voter', locals: { post: post } %>
+        </div>
+      </div>
+    </div>
+    <div class="fourteen wide column">
       <div class="segment">
         <div class="qwap list">
-          <h5><%= post.body %>( <span><em><%= link_to post.user.name, post.user if post.user %>, <%= time_ago_in_words(post.created_at) %> ago</em></span> )</h5>
+          <h5><%= post.body %>( <span><em><%= link_to post.user.name, post.user if post.user %>, <%= time_ago_in_words(post.created_at) %> ago, </em>[<%= pluralize(post.up_votes, 'up vote') %>/<%= pluralize(post.down_votes, 'down vote') %>]</span> )</h5>
         </div>
       </div>
     </div>

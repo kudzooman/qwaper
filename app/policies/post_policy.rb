@@ -11,4 +11,8 @@ class PostPolicy < ApplicationPolicy
     user.present? && user.role?(:admin)
   end
 
+  def destroy
+    update?
+  end
+
 end

@@ -8,26 +8,32 @@
 <%= link_to "Add more qwap!", new_post_path, class: "basic ui button" %>
 <% end %>
 
-
+  
 <% @posts.each do |post| %>
-<div class="ui grid">
- <div class="row">
-    <div class="four column">
-      <div class="segment">
-        <div class="votes">
-          <%= render partial: 'votes/voter', locals: { post: post } %>
+  <div class="ui grid">
+   <div class="row">
+      <div class="column">
+        <div class="segment">
+          <div class="votes">
+            <%= render partial: 'votes/voter', locals: { post: post } %>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="thirteen wide column">
-      <div class="segment">
-        <div class="qwap list">
-          <h5><%= post.body %> <br>( <span><em><%= link_to post.user.name, post.user if post.user %>, <%= time_ago_in_words(post.created_at) %> ago</em></span> )</h5>
+      <div class="fourteen wide column">
+        <div class="segment">
+          <div class="qwap list">
+            <h5><%= post.body %> <br>( <span><em><%= link_to post.user.name, post.user if post.user %>, <%= time_ago_in_words(post.created_at) %> ago, </em>[<%= pluralize(post.up_votes, 'up vote') %>/<%= pluralize(post.down_votes, 'down vote') %>]</span> )</h5>
+            <% if policy(post).update? %>
+              <%= link_to "Edit qwap", edit_post_path(post), class: "basic ui button" %>
+            <% end %>  
+            <% if policy(post).destroy? %>
+              <%= link_to "Vaporize!", post, method: :delete, data: { confirm: 'Final answer? Cause this topic is about to be real gone.'}, class: "basic ui button" %>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 <% end %>
 
 
