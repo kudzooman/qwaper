@@ -1,0 +1,13 @@
+<% if policy(Favorite.new).create? %>
+  <div class="favorite">
+    <%if favorite = current_user.favorited(post) %>
+      <%= link_to [post, favorite], class: 'basic ui icon button', method: :delete do %>
+        <i class="star icon"></i>&nbsp; Unfavorite?
+        <% end %>
+    <% else %>
+      <%= link_to [post, Favorite.new], class: 'basic ui icon button', method: :post do %>
+        <i class="empty star icon"></i>&nbsp; Favorite?
+      <% end %>
+    <% end %>
+  </div>
+<% end %>

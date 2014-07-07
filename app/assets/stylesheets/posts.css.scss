@@ -1,3 +1,11 @@
-// Place all the styles related to the Posts controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "semantic-ui";
+@import url(http://fonts.googleapis.com/css?family=Nunito:400,700|Oswald:400,700);
+@import url(http://fonts.googleapis.com/css?family=Cabin+Sketch|Montserrat);
+
+input {
+  border-radius: 3px;
+  font-family: 'Cabin Sketch', cursive;
+    font-size: 0.8em;
+    margin: 0px 0px 10px 5px;
+    height: 100px;
+}

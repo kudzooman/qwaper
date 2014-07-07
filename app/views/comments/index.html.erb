@@ -1,0 +1,65 @@
+<%#= content_tag :div, class: 'media', id: "comment-#{comment.id}" do %>
+
+<h6>Collab-o-qwap regarding:</h6>
+<div class="collab header">
+
+  <div class="ui grid">
+     <div class="row">
+        <div class="fourteen wide column">
+          <div class="segment">
+            <div class="qwap list">
+              
+              <h5><%= @post.body %><br>( <span><em><%= link_to @post.user.name, @post.user if @post.user %>,<%= time_ago_in_words(@post.created_at) %> ago) </em></h5>
+              <% if policy(Comment.new).create? %>
+                <%= link_to "Add another collab-o-qwap", new_post_comment_path, class: "basic ui button" %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="page">
+<%= will_paginate @comments %>
+</div>
+
+
+
+  
+<% @comments.each do |comment| %>
+<div class="collab list">
+  <div class="ui grid">
+   <div class="row">
+      <div class="fourteen wide column">
+        <div class="segment">
+          <div class="qwap list">
+            <h5><%= comment.body %> <br>( <span><em><%= link_to comment.user.name, comment.user if comment.user %>,<%= time_ago_in_words(comment.created_at) %> ago, </em></span> )</h5>
+
+
+
+            <% if false %>
+            <% if policy(comment).update? %>
+              <%= link_to "Edit", edit_post_comment_path(@post, comment), class: "basic ui button" %>
+            <% end %>  
+            <% end %>
+
+
+
+            <% if policy(comment).destroy? %>
+              <%= link_to "Vaporize!", [@post, comment], method: :delete, data: { confirm: 'Final answer? Cause this topic is about to be real gone.'}, class: "basic ui button" %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>
+
+
+
+<div class="page">
+<%= will_paginate @comments %>
+</div>
+<%# end %>

@@ -1,7 +1,10 @@
 class Post < ActiveRecord::Base
-  has_many :tags, dependent: :destroy
+  #has_many :tags, dependent: :destroy
   has_many :votes, dependent: :destroy
+  has_many :comments, dependent: :destroy
+  has_many :favorites, dependent: :destroy
   belongs_to :user
+  #belongs_to :catagory
 
   def up_votes
     self.votes.where(value: 1).count

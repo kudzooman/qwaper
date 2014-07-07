@@ -11,16 +11,16 @@
 <% end %>
 
 <div class="about">
-  <h2>Do you have a crappy idea that you don't care about or an idea you will never be able to do? That's where qwapper comes in, those ideas are all qwap, and now you have somewhere to put them.</h2>
+  <h2>:a place to dump all your qwappy ideas!</h2>
 </div>
 
 <% if current_user %>
-<div>
+<div class="give qwap">
   <%= link_to "Go ahead, give a qwap!", new_post_path, class: "basic ui button" %>
 </div>
 
 <% else %>
-<div>
+<div class="give qwap">
   <%= link_to "Go ahead, give a qwap!", new_user_session_path, class: "basic ui button" %>
 </div>
 

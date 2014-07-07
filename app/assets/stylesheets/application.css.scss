@@ -2,6 +2,7 @@
 @import url(http://fonts.googleapis.com/css?family=Nunito:400,700|Oswald:400,700);
 @import url(http://fonts.googleapis.com/css?family=Cabin+Sketch|Montserrat);
 
+
 /*Home Page*/
 .splash {
   margin: -50px 0px 0px 0px
@@ -19,8 +20,17 @@ h1 {
 }
 
 h2 {
-  font-size: 2em;
-  font-family: 'Montserrat', sans-serif;
+  font-size: 3.2em;
+  font-family: 'Cabin Sketch', cursive;
+  margin: 5px 0px 10px 15px;
+}
+
+.give.qwap {
+  margin: 15px 0px 0px 20px;
+
+    .basic.ui.button {
+      font-size: 3em;
+    }
 }
 
 p {
@@ -77,9 +87,10 @@ p {
 
 
 img {
-  height: 2.75%;
-  width: 5.5%;
-  margin: 0px 0px -20px -20px;
+  height: 3%;
+  width: 6.2%;
+  margin: 2px 0px -20px -20px;
+  padding: 3px 3px 3px 3px;
 }
 
 .page {
@@ -112,6 +123,13 @@ h5 {
   font-family: 'Cabin Sketch', cursive;
 }
 
+h6 {
+  font-size: 4.25em;
+  font-family: 'Cabin Sketch', cursive;
+  padding: 0px;
+  margin: 40px 0px -40px 0px;
+}
+
 
 
 .signin {
@@ -123,7 +141,7 @@ h5 {
 .signin.btn {
   font-size: 0.45em;
   margin: 0px 0px 10px 5px;
-}
+  }
 
 .basic.ui.button {
   font-family: 'Cabin Sketch', cursive;
@@ -154,10 +172,10 @@ li {
 }
 
 input {
-  border-radius: 5px;
+  border-radius: 3px;
   font-family: 'Cabin Sketch', cursive;
-  font-size: 0.80em;
-  margin: 0px 0px 10px 5px;
+    font-size: 0.8em;
+    margin: 0px 0px 10px 5px;
 }
 
 header {
@@ -180,15 +198,24 @@ footer1 {
   padding: 15px
 }
 
+.new.collab.area {
+  textarea {
+    height: 160px;
+    width: 680px;
+    font-size: 2.7em;
+  }
+} 
+
 textarea {
-height: 100px;
-width: 700px;
-font-size: 2em;
+  height: 100px;
+  width: 680px;
+  font-size: 2.7em;
 }
 
-
-
-
+textfield {
+  height: 100px;
+  width: 300px;
+}
 
 span {
   display: inline;
@@ -208,6 +235,49 @@ small {
   padding: 1px 4px 1px 19px;
   margin: -15px 0px 0px 0px;
   border-radius: 2px;
+}
+
+.collab.qwap.list {
+  padding: 1px 4px 1px 19px;
+  margin: -15px 0px 0px 0px;
+  border-radius: 2px;
+
+    .ui.grid {
+      border-style: solid;
+      border-size: 0.5em;
+      width: 95%;
+      margin: 3px 0px 0px 0px;
+    }
+}
+
+.collab.header {
+margin: 60px 0px 0px 0px;
+
+  .ui.grid {
+    border-style: dotted;
+    border-size: 0.5em;
+    width: 95%;
+    margin: -30px 0px 0px 0px;
+  }
+  .basic.ui.button {
+    font-size: 1.5em;
+    margin: -35px 0px 10px 0px
+  }
+}
+
+.collab.list {
+  margin: 20px 0px 0px 0px;
+
+  .ui.grid {
+    border-style: solid;
+    border-size: 0.5em;
+    width: 95%;
+    margin: 3px 0px 0px 0px;
+  }
+  .basic.ui.button {
+    font-size: 1.5em;
+    margin: -35px 0px 10px 0px
+  }
 }
 
 .user.list {
@@ -258,20 +328,78 @@ button {
 .points {
   font-size: 1.75em;
   font-family: 'Cabin Sketch', cursive;
-  margin: 0px 0px 0px 27px
+  margin: 0px 0px 0px 29px
 }
+
+
 
 .ui.grid {
   border-style: dotted;
   border-size: 0.5em;
   width: 95%;
-  margin: 3px 0px 0px 0px;
+  margin: 10px 0px 0px 0px;
 
   .basic.ui.button {
     font-size: 1em;
     margin: -35px 0px 10px 0px
   }
 }
+
+
+
+.new.qwap {
+  .ui.red.button {
+    font-size: 5em;
+    margin: -102px 0px 0px 0px;
+    height: 106px;
+    width: 100px;
+    padding: 0px 0px 0px 0px;
+    border-radius: 2px;
+    color: black;
+  }
+}
+
+.tag.btn {
+   .basic.ui.button  {
+      font-size: 3.7em;
+      height: 50px;
+      width: 686px;
+      padding: 7px 0px 0px 0px;
+  }
+    .type.btn {
+      .basic.ui.button  {
+        font-size: 3.8em;
+        height: 50px;
+        width: 100px;
+        padding: 10px 0px 0px 0px;
+    }
+  }
+}
+
+.tag.field {
+  height: 200px;
+    width: 400px;
+    font-size: 3em;
+
+  input {
+    height: 200px;
+    width: 400px;
+    font-size: 3em;
+  }
+}
+
+.delete {
+  padding: 0px 0px 0px 0px;
+  margin: -17px 0px 0px 760px;
+  z-index: -1;
+}
+
+.edit {
+  padding: 0px 0px 0px 0px;
+  margin: 0px 0px 0px 730px;
+  z-index: -1;
+}
+
 
 
 

@@ -1,5 +1,5 @@
 require 'faker'
-5.times do
+25.times do
   user = User.new(
     name:     Faker::Name.name,
     email:    Faker::Internet.email,
@@ -10,7 +10,7 @@ require 'faker'
 end
 users = User.all
 
-50.times do
+75.times do
   post = Post.create(
     user: users.sample,
     body: Faker::Lorem.paragraph
@@ -23,6 +23,15 @@ end
 
 posts = Post.all
 
+# Create Comments
+125.times do
+  Comment.create(
+    user: users.sample,
+    post: posts.sample,
+    body: Faker::Lorem.paragraph
+  )
+end
+
 admin = User.new(
   name:          'Admin User',
   email:         'admin@example.com',
@@ -32,6 +41,43 @@ admin = User.new(
   admin.skip_confirmation!
   admin.save
 
+  #Create a member
+  memberOne = User.new(
+    name:          'Member One User',
+    email:         'memberone@example.com',
+    password:      'helloworld',
+    )
+    memberOne.skip_confirmation!
+    memberOne.save
+
+    #Create a member
+  memberTwo = User.new(
+    name:          'Member Two User',
+    email:         'membertwo@example.com',
+    password:      'helloworld',
+    )
+    memberTwo.skip_confirmation!
+    memberTwo.save
+
+    #Create a member
+  memberThree = User.new(
+    name:          'Member Three User',
+    email:         'memberthree@example.com',
+    password:      'helloworld',
+    )
+    memberThree.skip_confirmation!
+    memberThree.save
+
+    #Create a member
+  memberFour = User.new(
+    name:          'Member Four User',
+    email:         'memberfour@example.com',
+    password:      'helloworld',
+    )
+    memberFour.skip_confirmation!
+    memberFour.save
+
 puts "Seed finished"
 puts "#{Post.count} posts created"
+puts "#{Comment.count} comments created"
 puts "#{User.count} users created"

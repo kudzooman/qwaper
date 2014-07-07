@@ -19,7 +19,7 @@
     <% if current_user %>
       <%= link_to (current_user.name || current_user.email), current_user, class: 'basic ui button' %>
       <%= link_to edit_user_registration_path, class: 'basic ui icon button pull right' do %>
-        <i class="basic empty star icon"></i>
+        <i class="bullseye icon"></i>
         <% end %>
       <%= link_to "log out", destroy_user_session_path, method: :delete, class: "basic ui button" %> 
     <% else %>
@@ -54,7 +54,7 @@
  <footer1>
  <div class="ui horizontal list">
   <div class="item">
-    <footer><%= link_to "qwappers /", users_path %></footer>
+    <footer><%= link_to "qwaps by type /", posts_path %></footer>
   </div>
   <div class="item">
    <footer><%= link_to "philosophy of qwap /", about_path %></footer>

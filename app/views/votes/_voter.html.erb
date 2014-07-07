@@ -2,19 +2,19 @@
   <div>
     <div class="up">
       <%= link_to post_up_vote_path(post) do %>
-      <i class="triangle up icon"></i>
+      <i class="red triangle up icon"></i>
       <% end %>
     </div>
-    
+
     <div class="points">
       <small><%= pluralize(post.points, '') %></small>
     </div>
-
-    <div class="down">
-      <%= link_to post_down_vote_path(post) do %>
-      <i class="triangle down icon"></i>
-      <% end %>
-    </div>
+ 
+      <div class="down">
+        <%= link_to post_down_vote_path(post) do %>
+        <i class="red triangle down icon"></i>
+        <% end %>
+      </div>
   </div>
 <% end %>
 

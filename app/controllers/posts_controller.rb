@@ -16,7 +16,7 @@ class PostsController < ApplicationController
       redirect_to posts_path
     else
       flash[:error] = "There was an error saving the post. Please try again."
-      render :new
+      redirect_to posts_path
     end
   end
 
@@ -30,6 +30,9 @@ class PostsController < ApplicationController
     authorize @post
     if @post.update_attributes(post_params)
       redirect_to posts_path
+
+    # elsif editing from user show view, redirect_to back
+    
     else
       flash[:error] = "Try again"
       render :edit

@@ -1,0 +1,11 @@
+<h3>Edit collab-o-qwap:</h3>
+
+<%= form_for @comment do |f| %>
+  <div>
+    <%= f.text_area :body, placeholder: "Edit your collab-o-qwap here. Remember, we all enter into this qwap-o-shpere knowing these are all qwappy ideas so PLEASE do not criticize any qwaps. This is about positive and constructive collaboration." %>
+  </div>
+
+  <div>
+    <%= f.submit "Click to collab-o-qwap", class: "basic ui button" %>
+  </div>
+<% end %>
