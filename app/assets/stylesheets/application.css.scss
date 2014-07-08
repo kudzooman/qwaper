@@ -258,11 +258,12 @@ margin: 60px 0px 0px 0px;
     border-size: 0.5em;
     width: 95%;
     margin: -30px 0px 0px 0px;
-  }
+
   .basic.ui.button {
     font-size: 1.5em;
     margin: -35px 0px 10px 0px
   }
+}
 }
 
 .collab.list {
@@ -392,12 +393,28 @@ button {
   padding: 0px 0px 0px 0px;
   margin: -17px 0px 0px 760px;
   z-index: -1;
+
 }
 
 .edit {
   padding: 0px 0px 0px 0px;
   margin: 0px 0px 0px 730px;
   z-index: -1;
+
+}
+
+.comment.count {
+  z-index: 2;
+  margin: -100px 80px 50px 200px;
+  font-family: 'Cabin Sketch', cursive;
+  font-size: 2em;
+}
+
+.favorite {
+
+  .basic.ui.icon.button {
+    font-size: 0.75em;
+  }
 }
 
 

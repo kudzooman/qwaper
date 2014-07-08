@@ -25,6 +25,16 @@
 
             <h5><%= post.body %> <br>( <span><em><%= link_to post.user.name, post.user if post.user %>, <%= time_ago_in_words(post.created_at) %> ago, </em>[<%= pluralize(post.up_votes, 'up vote') %>/<%= pluralize(post.down_votes, 'down vote') %>]</span> )<br><span><p><%= render partial: 'favorites/favorite', locals: { post: post } %></p> </span></h5>
 
+              
+
+              <% if false %>
+              Previous layout option
+              <div class="comment count">
+                <%= pluralize post.comments.count, 'comment' %>
+              </div>
+              <% end %>
+
+
               <% if policy(post).update? %>
               <div class="edit">
               <%= link_to edit_post_path(post), class: "basic ui icon" do %>
@@ -44,19 +54,24 @@
 
              
 
-              
+            <%= link_to post_comments_path(post), class: 'basic ui button' do %>  
+            <%= pluralize post.comments.count, 'collab-o-qwap/comment' %>
+            <% end %>
 
-            <%= link_to 'collab-o-qwap(comment)', new_post_comment_path(post), class: 'basic ui button' %>
+            <% if false %><%= link_to 'collab-o-qwap(comment)', new_post_comment_path(post), class: 'basic ui button' %><% end %>
 
             
 
-            <% if false %> Should use ajax to add qwaps without refresh <% end %>
+            <% if false %> Should use ajax to add qwap tags without refresh <% end %>
             <%= link_to 'tag qwap (coming soon)', posts_path, class: 'basic ui button' %>
+            
+
 
 
 
             <% if false %> If qwap is already asigned a type the button will be labeled that type <% end %>
             <%= link_to 'qwap type? (coming soon)', posts_path, class: 'basic ui button' %>
+            
 
 
 

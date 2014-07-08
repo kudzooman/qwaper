@@ -1,6 +1,6 @@
 <%#= content_tag :div, class: 'media', id: "comment-#{comment.id}" do %>
 
-<h6>Collab-o-qwap regarding:</h6>
+<h6>collab-o-qwap regarding:</h6>
 <div class="collab header">
 
   <div class="ui grid">
@@ -11,7 +11,7 @@
               
               <h5><%= @post.body %><br>( <span><em><%= link_to @post.user.name, @post.user if @post.user %>,<%= time_ago_in_words(@post.created_at) %> ago) </em></h5>
               <% if policy(Comment.new).create? %>
-                <%= link_to "Add another collab-o-qwap", new_post_comment_path, class: "basic ui button" %>
+                <%= link_to "New collab-o-qwap", new_post_comment_path, class: "basic ui button" %>
               <% end %>
             </div>
           </div>
