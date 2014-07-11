@@ -5,14 +5,14 @@
   </head>
   <body>
     <h1>New comment on "<%= @post.body %>"</h1>
-    <small>
+    <h3>
       By: <%= @comment.user.name %>
-    </small>
-    <p>
+    </h3>
+    <h1>
       <%= @comment.body %>
-    </p>
+    </h1>
     <p>
-      <%= link_to "View Comment on site", post_comment_url(@comment.post, @comment anchor: "comment-#{@comment.id}") %>
+      Visit online at: www.qwapper.com
     </p>
   </body>
 </html>

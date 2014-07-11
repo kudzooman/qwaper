@@ -2,6 +2,10 @@
 @import url(http://fonts.googleapis.com/css?family=Nunito:400,700|Oswald:400,700);
 @import url(http://fonts.googleapis.com/css?family=Cabin+Sketch|Montserrat);
 
+body {
+  background:url('notebook_@2X.png');
+}
+
 
 /*Home Page*/
 .splash {
@@ -36,14 +40,21 @@ h2 {
 p {
   font-family: 'Montserrat', sans-serif;
   font-size: 2em;
-}
-.about.heading {
-  font-size: 2.5em;
-  font-family: 'Cabin Sketch', cursive;
-  margin: 30px 0px 0px 20px;
-    span {
-    font-size: 0.75em;
   }
+
+  p:first-letter {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.7em;
+    color: #D95C5C;
+  }
+
+  .about.heading {
+    font-size: 2.5em;
+    font-family: 'Cabin Sketch', cursive;
+    margin: 30px 0px 0px 20px;
+      span {
+      font-size: 0.75em;
+      }
 }
 
 .about.one {
@@ -161,7 +172,7 @@ a {
 }
 
 a:hover {
-  color: #D00008;
+  color: #D95C5C;
 }
 
 

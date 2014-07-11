@@ -17,6 +17,7 @@ resources :catagories
 
   devise_for :users
   resources :users, only: [:show, :index, :update]
+    resources :follows, only: [:create, :destroy]
 
   get 'home' => 'welcome#index'
 
