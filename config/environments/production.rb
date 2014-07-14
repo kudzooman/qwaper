@@ -20,6 +20,7 @@ Rails.application.configure do
   # config.action_dispatch.rack_cache = true
 
   # Disable Rails's static asset server (Apache or nginx will already do this).
+  # Ben added these four
   config.cache_classes = true
   config.serve_static_assets = true
   config.assets.compile = true
