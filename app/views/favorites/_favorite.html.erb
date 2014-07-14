@@ -1,3 +1,5 @@
+
+
 <% if policy(Favorite.new).create? %>
   <div class="favorite">
     <%if favorite = current_user.favorited(post) %>
@@ -11,3 +13,4 @@
     <% end %>
   </div>
 <% end %>
+

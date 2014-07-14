@@ -30,6 +30,10 @@ def favorited(post)
   self.favorites.where(post_id: post.id).first
 end
 
+def voted(post)
+  self.votes.where(post_id: post.id).first
+end
+
 def follow(user)
   self.follow.where(user_id: user.id).first
 end

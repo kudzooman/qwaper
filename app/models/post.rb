@@ -6,6 +6,8 @@ class Post < ActiveRecord::Base
   belongs_to :user
   belongs_to :catagory
 
+  default_scope { order('created_at DESC') }
+
   def up_votes
     self.votes.where(value: 1).count
   end
@@ -27,8 +29,6 @@ class Post < ActiveRecord::Base
 
   validates :body, length: { maximum: 200 }, presence: true
   validates :user, presence: true
-
-  default_scope { order('rank DESC') }
 
   private 
 
