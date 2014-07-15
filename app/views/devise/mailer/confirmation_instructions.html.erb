@@ -1,5 +1,17 @@
 <p>Welcome <%= @email %>!</p>
 
-<p>You can confirm your account email through the link below:</p>
+<p>Thank you for signing up on www.qwapper.com!</p>
+<p>After confirming your account email through the link below you will be able to:</p>  
+<ul>
+  <li>qwap as much as you want</li>
+  <li>vote on qwap</li>
+  <li>favorite qwap</li>
+  <li>view other qwappers and their list of qwap</li>
+  <li>and collab-o-qwap with other qwappers to possibly turn qwap into not-qwap!</li>
+</ul>
+
+<p>Happy qwapping!</p>
 
 <p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>
+
+
