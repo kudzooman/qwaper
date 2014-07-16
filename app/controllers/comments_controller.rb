@@ -21,7 +21,7 @@ class CommentsController < ApplicationController
     if @comment.save
       flash[:notice] = "Bam!"
     else
-      flash[:error] = "What was that?! Try again."
+      flash[:error] = "What was that?! Maybe too many or too few characters. Try again."
     end
       
     # respond_with(@comment) do |f|

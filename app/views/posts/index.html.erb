@@ -79,7 +79,7 @@
               </div>
               <% end %>
 
-
+              <% if false %>
               <% if policy(post).update? %>
               <div class="edit">
               <%= link_to edit_post_path(post), class: "basic ui icon" do %>
@@ -96,6 +96,7 @@
                   <% end %>
                 </div>
             <% end %>
+            <% end %>
 
              
 
@@ -105,15 +106,24 @@
 
             
 
-            <% if false %> Should use ajax to add qwap tags without refresh <% end %>
+            <% if false %> Should use ajax to add qwap tags without refresh
             <%= link_to 'tag qwap(coming soon)', posts_path, class: 'basic ui button' %>
-            
+            <% end %>
+
+            <% if policy(post).update? %>
+            <%= link_to 'edit qwap', edit_post_path(post), class: 'basic ui button' %>
+            <% end %>
 
 
 
-
-            <% if false %> If qwap is already asigned a type the button will be labeled that type <% end %>
+            <% if false %> If qwap is already asigned a type the button will be labeled that type
             <%= link_to 'qwap type? (coming soon)', posts_path, class: 'basic ui button' %>
+            <% end %>
+
+
+            <% if policy(post).destroy? %>
+            <%= link_to 'vaporize qwap!', post, method: :delete, data: { confirm: 'Final answer? Cause this qwap is about to be real gone.'}, class: 'basic ui button' %>
+            <% end %>
             
 
 

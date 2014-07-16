@@ -1,8 +1,7 @@
 <h3>How to qwap:</h3>
 <ol>
-  <li>Add new qwap.</li>
-  <li>Select qwap type.<em>(optional)</em></li>
-  <li>Tag qwap, e.g., "silly", "legit", "electronics", "Doritos".<em>(optional)</em></li>
+  <li>Add new qwap.(keep it PG please)</li>
+  <li>200 character limit!</li>
   <li>Save that qwap!</li>
 </ol>
 
@@ -10,15 +9,17 @@
 
 <%= form_for @post do |f| %>
   <div class="new qwap">
-    <%= f.text_area :body, placeholder: "Enter your qwap here. Make sure you really wanna share this with the world because you won't be able to delete it or edit it. 200 characters or less FYI" %>
+    <%= f.text_area :body, placeholder: "Enter your qwap here. 200 characters or fewer FYI" %>
       <span><%= f.submit "Save", class: "ui red button" %></span>
   </div>
 
 
+  <% if false %>
   <div class="tag btn">
     <%= link_to "Tag qwap (coming soon)", posts_path, class: "basic ui button" %>
     <span class="type btn"><%= link_to "Type?", posts_path, class: "basic ui button" %></span>
   </div>
+  <% end %>
 
 
 

@@ -15,8 +15,9 @@ class PostsController < ApplicationController
       flash[:notice] = "Post was saved."
       redirect_to posts_path
     else
-      flash[:error] = "There was an error saving the post. Please try again."
-      redirect_to posts_path
+      flash[:error] = "Error! That was either way too short or over 200 characters."
+      render :new
+      #redirect_to posts_path
     end
   end
 
@@ -52,6 +53,22 @@ class PostsController < ApplicationController
       redirect_to posts_path
       #render :index
     end
+  end
+
+  def oldest
+    if default_scope { order('created_at ASC') }
+    render :index
+  end
+  end
+
+  def newest
+    if default_scope { order('created_at DESC') }
+    render :index
+  end
+  end
+
+  def best
+
   end
 
   private

@@ -32,10 +32,20 @@
         <div class="qwap list">
           <h5><%= post.body %>( <span><em><%= link_to post.user.name, post.user if post.user %>, <%= time_ago_in_words(post.created_at) %> ago, </em>[<%= pluralize(post.up_votes, 'up vote') %>/<%= pluralize(post.down_votes, 'down vote') %>]</span> )<br><span><p><%= render partial: 'favorites/favorite', locals: { post: post } %></p> </span></h5>
             <%= link_to 'collab-o-qwap(comment)', new_post_comment_path(post), class: 'basic ui button' %>
-            <%= link_to 'tag qwap', edit_post_path(post), class: 'basic ui button' %>
 
-            <% if false %> If qwap is already asigned a type the button will be labeled that type <% end %>
+
+            <% if false %>
+            <%= link_to 'tag qwap', edit_post_path(post), class: 'basic ui button' %>
+            <% end %>
+
+
+
+            <% if false %> If qwap is already asigned a type the button will be labeled that type 
             <%= link_to 'qwap type?', edit_post_path(post), class: 'basic ui button' %>
+            <% end %>
+
+
+
           <% if policy(post).update? %>
               <%= link_to "edit qwap", edit_post_path(post), class: "basic ui button" %>
             <% end %>  
@@ -64,3 +74,5 @@
 
 
 <h3><%= link_to "Back", :back %></h3>
+
+
