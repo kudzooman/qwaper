@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.includes(:user).paginate(page: params[:page], per_page: 20)
+    @posts = Post.includes(:user).order('created_at DESC').paginate(page: params[:page], per_page: 20)
   end
 
   def new
@@ -17,8 +17,11 @@ class PostsController < ApplicationController
     else
       flash[:error] = "Error! That was either way too short or over 200 characters."
       render :new
-      #redirect_to posts_path
     end
+  end
+
+  def show
+    @post = Post.find(params[:id])
   end
 
   def edit
@@ -56,19 +59,28 @@ class PostsController < ApplicationController
   end
 
   def oldest
-    if default_scope { order('created_at ASC') }
+    @posts = Post.order('created_at ASC').paginate(page: params[:page], per_page: 20)
     render :index
-  end
   end
 
   def newest
-    if default_scope { order('created_at DESC') }
+    @posts = Post.order('created_at DESC').paginate(page: params[:page], per_page: 20)
     render :index
-  end
   end
 
   def best
+    @posts = Post.order('rank DESC').paginate(page: params[:page], per_page: 20)
+    render :index
+  end
 
+  def worst
+    @posts = Post.order('rank ASC').paginate(page: params[:page], per_page: 20)
+    render :index
+  end
+
+  def random
+    @post = Post.rand 
+    render :show
   end
 
   private

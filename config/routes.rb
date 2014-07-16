@@ -3,6 +3,12 @@ Rails.application.routes.draw do
 
 
 resources :posts do
+  collection do
+    get '/newest' => 'posts#newest', as: :newest
+    get '/oldest' => 'posts#oldest', as: :oldest
+    get '/best' => 'posts#best', as: :best
+    get '/worst' => 'posts#worst', as: :worst
+  end
   resources :comments
     resources :tags
     get '/up-vote' => 'votes#up_vote', as: :up_vote

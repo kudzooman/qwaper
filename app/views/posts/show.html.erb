@@ -1,0 +1,27 @@
+<h3>random qwap</h3>
+
+<h5><%= post.body %>
+  <div class="post user name">
+    <%= link_to post.user.name, post.user if post.user %>, <%= time_ago_in_words(post.created_at) %> ago,
+  </div>
+  <div class="votes total">
+    [<%= pluralize(post.up_votes, 'up vote') %>/<%= pluralize(post.down_votes, 'down vote') %>]
+  </div>
+
+  <div class="fav">
+    <%= render partial: 'favorites/favorite', locals: { post: post } %>
+  </div>
+
+  <% if current_user %>
+  <div class="tweet">
+    <a href="https://twitter.com/share" class="basic ui button" data-lang="en">Tweet</a>
+  </div>
+
+  <% else %>
+
+  <div class="tweet pull left">
+    <a href="https://twitter.com/share" class="basic ui button" data-lang="en">Tweet</a>
+  </div>
+  <% end %>
+
+  </h5>

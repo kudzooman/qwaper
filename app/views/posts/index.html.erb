@@ -6,24 +6,19 @@
 
 <% if policy(Post.new).create? %>
 <%= link_to "add more qwap!", new_post_path, class: "basic ui button" %>
+<% else%>
+<%= link_to "add more qwap!", new_user_session_path, class: "basic ui button" %>
 <% end %>
 
+<%= link_to "newest", newest_posts_path, class: "basic ui button" %>
 
-<%if false %>
+<%= link_to "oldest", oldest_posts_path, class: "basic ui button" %>
 
-<% if policy(Post.new).create? %>
-<%= link_to "newest", new_post_path, class: "basic ui button" %>
-<% end %>
-<% if policy(Post.new).create? %>
-<%= link_to "oldest", new_post_path, class: "basic ui button" %>
-<% end %>
-<% if policy(Post.new).create? %>
-<%= link_to "best", new_post_path, class: "basic ui button" %>
-<% end %>
+<%= link_to "best", best_posts_path, class: "basic ui button" %>
 
-<% end %>
+<%= link_to "worst", worst_posts_path, class: "basic ui button" %>
 
-
+<%#= link_to "random", post_comments_path(@post), class: "basic ui button" %>
   
 <% @posts.each do |post| %>
   <div class="ui grid">
@@ -41,7 +36,8 @@
 
             <% if false %><h5><%= post.body %> <br>
               ( <span><em><%= link_to post.user.name, post.user if post.user %>, <%= time_ago_in_words(post.created_at) %> ago, </em>[<%= pluralize(post.up_votes, 'up vote') %>/<%= pluralize(post.down_votes, 'down vote') %>]</span> )<br>
-              <span></p><%= render partial: 'favorites/favorite', locals: { post: post } %></p></span><a href="https://twitter.com/share" class="basic ui button" data-lang="en">Tweet</a></h5><% end %>
+              <span></p><%= render partial: 'favorites/favorite', locals: { post: post } %></p></span><a href="https://twitter.com/share" class="basic ui button" data-lang="en">Tweet</a></h5>
+            <% end %>
 
               <h5><%= post.body %>
               <div class="post user name">
@@ -106,9 +102,9 @@
 
             
 
-            <% if false %> Should use ajax to add qwap tags without refresh
+            <%# Should use ajax to add qwap tags without refresh
             <%= link_to 'tag qwap(coming soon)', posts_path, class: 'basic ui button' %>
-            <% end %>
+          
 
             <% if policy(post).update? %>
             <%= link_to 'edit qwap', edit_post_path(post), class: 'basic ui button' %>

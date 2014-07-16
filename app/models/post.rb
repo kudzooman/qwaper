@@ -6,8 +6,6 @@ class Post < ActiveRecord::Base
   belongs_to :user
   belongs_to :catagory
 
-  default_scope { order('created_at DESC') }
-
   def up_votes
     self.votes.where(value: 1).count
   end
