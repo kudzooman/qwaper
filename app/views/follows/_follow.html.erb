@@ -1,14 +1,15 @@
 <% if policy(Follow.new).create? %>
   <div class="follow">
-    <%if follow = current_user.follow(@user.name) %>
-      <%= link_to [@user.name, follow], class: 'basic ui icon button', method: :delete do %>
+    <%if follow = current_user.follow(user) %>
+      <%= link_to [user, follow], class: 'basic ui icon button', method: :delete do %>
         <i class="star icon"></i>&nbsp; Unfollow?
         <% end %>
     <% else %>
-      <%= link_to [@user.name, Follow.new], class: 'basic ui icon button', method: :post do %>
+      <%= link_to [user, Follow.new], class: 'basic ui icon button', method: :post do %>
         <i class="empty star icon"></i>&nbsp; Follow?
       <% end %>
     <% end %>
   </div>
 <% end %>
 
+<%#= link_to "follow", user_follows_path(user), class: "basic ui button", method: :post %>

@@ -35,7 +35,7 @@ def voted(post)
 end
 
 def follow(user)
-  self.follow.where(user_id: user.id).first
+  self.follows.where(user_id: user.id).first
 end
 
 end

@@ -10,6 +10,7 @@ class PostsController < ApplicationController
 
   def create
   @post = current_user.posts.build(post_params)
+  @new_post = Post.new
   authorize @post
     if @post.save
       flash[:notice] = "Post was saved."
@@ -78,10 +79,10 @@ class PostsController < ApplicationController
     render :index
   end
 
-  def random
-    @post = Post.rand 
-    render :show
-  end
+  #def random
+  #  @post = Post.rand 
+  #  render :show
+  #end
 
   private
 

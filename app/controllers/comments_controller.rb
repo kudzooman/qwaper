@@ -23,12 +23,7 @@ class CommentsController < ApplicationController
     else
       flash[:error] = "What was that?! Maybe too many or too few characters. Try again."
     end
-      
-    # respond_with(@comment) do |f|
-    #   f.html { 
         redirect_to post_comments_path 
-      # }
-    # end
   end
 
   def edit

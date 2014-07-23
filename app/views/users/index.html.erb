@@ -12,7 +12,16 @@
 <% @users.each do |user| %>
 
 <div class="user list">
-  <%= link_to user.name, user %>
+  <%= link_to user.name, user %><span>
+
+  <%= render partial: 'follows/follow', locals: { user: user } %></span>
+
+  <%#= link_to "follow", user_follows_path(user), class: "basic ui button", method: :post %>
+</div>
+
+<div class="follow">
+  <%#= link_to "follow", user_follows_path(user), class: "basic ui button", method: :post %>
+  <%#= render partial: 'follows/follow', locals: { user_id: @user.name } %>
 </div>
 
 <% end %>

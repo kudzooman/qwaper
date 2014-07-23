@@ -19,11 +19,10 @@ end
 resources :catagories
 
 
-
-
   devise_for :users
-  resources :users, only: [:show, :index, :update]
-    resources :follows, only: [:create, :destroy]
+  resources :users, only: [:show, :index, :update] do
+      resources :follows, only: [:create, :destroy]
+  end
 
   get 'home' => 'welcome#index'
 

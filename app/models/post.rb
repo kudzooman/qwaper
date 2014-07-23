@@ -5,6 +5,8 @@ class Post < ActiveRecord::Base
   has_many :favorites, dependent: :destroy
   belongs_to :user
   belongs_to :catagory
+  #after_save :email_followers
+  after_create :send_followers_email
 
   def up_votes
     self.votes.where(value: 1).count
@@ -34,6 +36,19 @@ class Post < ActiveRecord::Base
     user.votes.create(value: 1, post: self)
   end
 
+  #def send_email_followers
+    # grab the creator of the post (post.user)
+    #@post.user =  
+    # see if they have any followers
+    # if so, send an email to each follower
+  #end
+
+  def send_followers_email
+    self.user.follows.each do |follow|
+      FollowMailer.new_post(follow.user, self).deliver
+    end
+  end
+
 # When someone votes in the top 25 index view the qwap only earns 1/4 pt
 #def create_top_vote
   #user.votes.create(value: 0.25, post: self)
@@ -50,6 +65,8 @@ class Post < ActiveRecord::Base
 #end
 
 # Users get points for voting
+
+# Users can only vote 10 times per 24hrs (?)
 
 # When someone votes in the top 25 index view the user earns 1/4 pt
 #def create_top_vote
