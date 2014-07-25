@@ -4,8 +4,8 @@ class Post < ActiveRecord::Base
   has_many :comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
   belongs_to :user
-  belongs_to :catagory
-  #after_save :email_followers
+  # belongs_to :catagory
+
   after_create :send_followers_email
 
   def up_votes
@@ -44,8 +44,8 @@ class Post < ActiveRecord::Base
   #end
 
   def send_followers_email
-    self.user.follows.each do |follow|
-      FollowMailer.new_post(follow.user, self).deliver
+    self.user.relationships.each do |relationship|
+      FollowMailer.new_post(follower.user, self).deliver
     end
   end
 

@@ -8,7 +8,12 @@ class User < ActiveRecord::Base
   has_many :votes, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
-  has_many :follows, dependent: :destroy
+  has_many :relationships, foreign_key: "follower_id", dependent: :destroy
+  has_many :followed_users, through: :relationships, source: :followed
+  has_many :reverse_relationships, foreign_key: "followed_id",
+                                    class_name: "Relationship",
+                                    dependent: :destroy
+  has_many :followers, through: :reverse_relationships, source: :follower
 
 # def self.top_rated
 #   self.select('users.*'). # Select all attributes of the user
@@ -34,8 +39,17 @@ def voted(post)
   self.votes.where(post_id: post.id).first
 end
 
-def follow(user)
-  self.follows.where(user_id: user.id).first
+
+def following?(other_user)
+  relationships.find_by(followed_id: other_user.id)
+end 
+
+def follow!(other_user)
+  relationships.create!(followed_id: other_user.id)
+end
+
+def unfollow!(other_user)
+  relationships.find_by(followed_id: other_user.id).destroy
 end
 
 end

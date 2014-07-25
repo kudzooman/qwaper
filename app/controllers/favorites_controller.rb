@@ -5,10 +5,10 @@ class FavoritesController < ApplicationController
     authorize favorite
     if favorite.save
       flash[:notice] = "Favorited post"
-      redirect_to posts_path
+      redirect_to :back
     else
       flash[:error] = "Unable to add favorite. Please try again."
-      redirect_to posts_path
+      redirect_to :back
     end
   end
 
@@ -18,10 +18,10 @@ class FavoritesController < ApplicationController
     authorize favorite
     if favorite.destroy
       flash[:notice] = "Removed favorite."
-      redirect_to posts_path
+      redirect_to :back
     else
       flash[:error] = "Unable to remove favorite. Please try again."
-      redirect_to posts_path
+      redirect_to :back
     end
   end
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140709041606) do
+ActiveRecord::Schema.define(version: 20140725025418) do
 
   create_table "catagories", force: true do |t|
     t.string   "title"
@@ -43,14 +43,6 @@ ActiveRecord::Schema.define(version: 20140709041606) do
   add_index "favorites", ["post_id"], name: "index_favorites_on_post_id"
   add_index "favorites", ["user_id"], name: "index_favorites_on_user_id"
 
-  create_table "follows", force: true do |t|
-    t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "follows", ["user_id"], name: "index_follows_on_user_id"
-
   create_table "posts", force: true do |t|
     t.text     "body"
     t.datetime "created_at"
@@ -60,6 +52,17 @@ ActiveRecord::Schema.define(version: 20140709041606) do
   end
 
   add_index "posts", ["user_id"], name: "index_posts_on_user_id"
+
+  create_table "relationships", force: true do |t|
+    t.integer  "follower_id"
+    t.integer  "followed_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "relationships", ["followed_id"], name: "index_relationships_on_followed_id"
+  add_index "relationships", ["follower_id", "followed_id"], name: "index_relationships_on_follower_id_and_followed_id", unique: true
+  add_index "relationships", ["follower_id"], name: "index_relationships_on_follower_id"
 
   create_table "tags", force: true do |t|
     t.string   "name"

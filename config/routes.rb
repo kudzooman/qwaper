@@ -18,10 +18,14 @@ end
 
 resources :catagories
 
+resources :relationships, only: [:create, :destroy]
+
 
   devise_for :users
   resources :users, only: [:show, :index, :update] do
-      resources :follows, only: [:create, :destroy]
+      member do
+        get :following, :followers
+      end
   end
 
   get 'home' => 'welcome#index'

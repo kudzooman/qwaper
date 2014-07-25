@@ -1,5 +1,5 @@
-<h3><%= @user.name || @user.email %><span> (<%= pluralize(@user.posts.count, 'post') %>)</span>
-   <% if false%><%= render partial: 'follows/follow', locals: { user_id: @user.name } %><% end %>
+<h3>
+  <%= @user.name || @user.email %><span> (<%= pluralize(@user.posts.count, 'post') %>)</span>
 </h3>
 
 
@@ -31,8 +31,9 @@
       <div class="segment">
         <div class="qwap list">
           <h5><%= post.body %>( <span><em><%= link_to post.user.name, post.user if post.user %>, <%= time_ago_in_words(post.created_at) %> ago, </em>[<%= pluralize(post.up_votes, 'up vote') %>/<%= pluralize(post.down_votes, 'down vote') %>]</span> )<br><span><p><%= render partial: 'favorites/favorite', locals: { post: post } %></p> </span></h5>
-            <%= link_to 'collab-o-qwap(comment)', new_post_comment_path(post), class: 'basic ui button' %>
-
+            <div class="collab-btn">
+              <%= link_to 'collab-o-qwap(comment)', new_post_comment_path(post), class: 'basic ui button' %>
+            </div>
 
             <% if false %>
             <%= link_to 'tag qwap', edit_post_path(post), class: 'basic ui button' %>
