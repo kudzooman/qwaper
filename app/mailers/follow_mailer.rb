@@ -9,7 +9,7 @@ class FollowMailer < ActionMailer::Base
     headers["Message-ID"] = "<user/#{@user.id}@qwapper.com>"
     headers["References"] = "<post/#{@post.id}@qwapper.com>"
 
-    mail(to: user.email, subject: "New qwap by #{user.name}")
+    mail(to: @user.email, subject: "New qwap by #{@post.user.name}")
   end
 
 end

@@ -44,8 +44,9 @@ class Post < ActiveRecord::Base
   #end
 
   def send_followers_email
-    self.user.relationships.each do |relationship|
-      FollowMailer.new_post(follower.user, self).deliver
+    relationships = Relationship.where(followed_id: self.user.id)
+    relationships.each do |relationship|
+      FollowMailer.new_post(relationship.follower, self).deliver
     end
   end
 
