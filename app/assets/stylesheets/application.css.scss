@@ -340,7 +340,7 @@ margin: 60px 0px 0px 0px;
   margin: 15px 0px 10px 30px;
 
     .basic.ui.button {
-      font-size: 0.5em;
+      font-size: 0.25em;
     }
 }
 
@@ -506,13 +506,18 @@ button {
 
 .follow {
   position: absolute;
-margin: -40px 0px 0px 400px;
+  margin: -40px 0px 0px 400px;
+    .basic.ui.button {
+      text-size: 3em;
+    }
 }
 
 .unfollow {
   postion: relative;
   margin: -40px 0px 0px 400px;
-  
+    .basic.ui.button {
+      text-size: 3em;
+  }
 }
 
 .collab-btn {
